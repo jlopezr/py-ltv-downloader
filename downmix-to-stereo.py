@@ -8,4 +8,4 @@ if len(sys.argv)!=3:
 input = sys.argv[2]
 output = "stereo-"+input
 
-subprocess.run(["ffmpeg","-i",input,"-c:v","copy","-ac","2",output])⏎
+subprocess.run(["ffmpeg","-i",input,"-c:v","copy","-ac","2",output])
