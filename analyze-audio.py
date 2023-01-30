@@ -32,4 +32,8 @@ for stream in streams:
             codec = stream["codec_long_name"]
         else:
             codec = stream["codec_name"]
-        print(str(stream["index"])+") Channels:",stream["channels"],codec, stream["sample_rate"],"Hz Lang:",stream["tags"]["language"],"-",layout)
+        if "language" in stream["tags"]:
+            lang = stream["tags"]["language"]
+        else:
+            lang = "?"
+        print(str(stream["index"])+") Channels:",stream["channels"],codec, stream["sample_rate"],"Hz Lang:",lang,"-",layout)
