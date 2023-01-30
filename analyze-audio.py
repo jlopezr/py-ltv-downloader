@@ -12,7 +12,7 @@ if len(sys.argv)!=3:
 input = sys.argv[2]
 
 #ffprobe -show_streams -show_format -print_format json cut-\*Watermark.mov
-txt = subprocess.run(['ffprobe','-show_streams','-show_format','-print_format','json',input], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL).stdout.decode('utf-8')
+txt = subprocess.run(['ffprobe','-hide_banner','-show_streams','-show_format','-print_format','json',input], stdout=subprocess.PIPE).stdout.decode('utf-8')
 #print(txt)
 
 
