@@ -15,6 +15,9 @@ input = sys.argv[2]
 txt = subprocess.run(['ffprobe','-hide_banner','-show_streams','-show_format','-print_format','json',input], stdout=subprocess.PIPE).stdout.decode('utf-8')
 #print(txt)
 
+print()
+print()
+print()
 
 data = json.loads(txt)
 streams = data["streams"]
@@ -25,4 +28,8 @@ for stream in streams:
             layout = stream["channel_layout"]
         else:
             layout = "?"
-        print(str(stream["index"])+") Channels:",stream["channels"], stream["codec_long_name"], stream["sample_rate"],"Hz Lang:",stream["tags"]["language"], "-", layout)
+        if stream["codec_long_name"]!="unknown":
+            codec = stream["codec_long_name"]
+        else:
+            codec = stream["codec_name"]
+        print(str(stream["index"])+") Channels:",stream["channels"],codec, stream["sample_rate"],"Hz Lang:",stream["tags"]["language"],"-",layout)
