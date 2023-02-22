@@ -11,4 +11,4 @@ dir, file = os.path.split(input)
 file = "cut-"+file
 output = os.path.join(dir, file)
 
-subprocess.run(["ffmpeg","-i",input,"-ss","0","-t","120","-c","copy",output])
+subprocess.run(["ffmpeg","-i",input,"-ss","0","-t","120","-c","copy","-map","0",output])
