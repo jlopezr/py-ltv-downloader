@@ -26,5 +26,6 @@ for file in files:
 
 print()
 print("Available commands:")
+print("-------------------")
 result.sort()
 print(*result, sep = "\n")
