@@ -20,6 +20,4 @@ right = sys.argv[4]
 #subprocess.run(["ffmpeg","-i",input,"-map","0:v","-c:v","copy","-filter_complex","[0:a:6][0:a:7]join=inputs=2:channel_layout=stereo[a]","-map","[a]",output])
 
 #ffmpeg -i content.mxf -filter_complex "[0:a:6][0:a:7]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2  output3.mxf
-
-print(["ffmpeg","-i",input,"-filter_complex",f'"[0:a:{left}][0:a:{right}]amerge=inputs=2[a]"',"-map","0:v","-map",'"[a]"',"-c:v","copy","-ac","2",output])
 subprocess.run(["ffmpeg","-i",input,"-filter_complex",f'"[0:a:{left}][0:a:{right}]amerge=inputs=2[a]"',"-map","0:v","-map",'"[a]"',"-c:v","copy","-ac","2",output])
