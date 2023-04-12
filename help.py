@@ -24,5 +24,7 @@ for file in files:
     if path.endswith(".py") :
         result.append((path[:len(path) - 3]))
 
+print()
+print("Available commands:")
 result.sort()
 print(*result, sep = "\n")
