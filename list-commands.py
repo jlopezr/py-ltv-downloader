@@ -7,7 +7,7 @@ import json
 from urllib import request;
 
 if len(sys.argv)!=2:
-    print("list-commands require no arguments")
+    print("help require no arguments")
     sys.exit(-1)
 
 URL='https://api.github.com/repos/jlopezr/py-ltv-downloader/git/trees/main?recursive=1'
