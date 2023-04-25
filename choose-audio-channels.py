@@ -12,9 +12,8 @@ dir, file = os.path.split(input)
 file = "chosen-"+file
 output = os.path.join(dir, file)
 
-left = sys.argv[3]
-right = sys.argv[4]
-
+left = str(int(sys.argv[3])-1)
+right = str(int(sys.argv[4])-1)
 
 #ffmpeg -i *Watermark.mov -map 0:v -c:v copy -filter_complex [0:a:6][0:a:7]join=inputs=2:channel_layout=stereo[a] -map [a] output.mov
 #subprocess.run(["ffmpeg","-i",input,"-map","0:v","-c:v","copy","-filter_complex","[0:a:6][0:a:7]join=inputs=2:channel_layout=stereo[a]","-map","[a]",output])
